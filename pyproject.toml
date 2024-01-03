@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "mlops"
 version = "0.0.1"
-description = "daily updates from the real of DTU\u0027s MLOps class, Jan 2024"
+description = "daily updates from DTU\u0027s MLOps class, Jan 2024"
 authors = [
-  { name = "Ferenc Fodor", email = "your@email.com" },
+  { name = "Ferenc Fodor", email = "s220356@email.com" },
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
