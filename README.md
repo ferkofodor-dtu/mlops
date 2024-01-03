@@ -1,6 +1,6 @@
 # mlops
 
-daily updates from the real of DTU's MLOps class, Jan 2024
+daily updates from DTU's MLOps class, Jan 2024
 
 ## Project structure
 
