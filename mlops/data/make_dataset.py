@@ -1,14 +1,17 @@
-import torch
-import click
-from torchvision import datasets, transforms
 from pathlib import Path
+
+import click
+import torch
 
 
 def mnist(src=None):
     """Return train and test dataloaders for MNIST."""
     if src is None:
         src = Path.cwd() / "data" / "raw" / "mnist"
-    train_data, train_labels = [ ], [ ]
+    else:
+        src = Path(src)
+
+    train_data, train_labels = [], []
     for i in range(5):
         train_data.append(torch.load(src / f"train_images_{i}.pt"))
         train_labels.append(torch.load(src / f"train_target_{i}.pt"))
@@ -28,8 +31,8 @@ def mnist(src=None):
     # print(test_labels.shape)
 
     return (
-        torch.utils.data.TensorDataset(train_data, train_labels), 
-        torch.utils.data.TensorDataset(test_data, test_labels)
+        torch.utils.data.TensorDataset(train_data, train_labels),
+        torch.utils.data.TensorDataset(test_data, test_labels),
     )
 
 
@@ -48,7 +51,6 @@ def main(src, dst, dataset):
     torch.save(test_data, dst / "test_data.pt")
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Get the data and process it
     main()
